@@ -19,6 +19,15 @@ public class BirdDead : MonoBehaviour
         bRb = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isDead)
