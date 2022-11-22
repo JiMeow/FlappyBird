@@ -16,7 +16,7 @@ public class PipeSpawnManager : MonoBehaviour
         float pos_x = (number + 1) * 2;
         float pos_y_bottom = -0.3f;
         float pos_y_top = 0.3f;
-        float error = Random.RandomRange(-0.6f, 0.6f);
+        float error = Random.Range(-0.6f, 0.6f);
         pos_y_bottom += error;
         pos_y_top += error;
         GameObject pipe_bottom = Instantiate(Resources.Load("PipeBottom")) as GameObject;
