@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class SetStartBirdOnSound : MonoBehaviour
 {
+    Transform[] allChildren;
     void Start()
     {
+        allChildren = GetComponentsInChildren<Transform>();
+    }
+
+    private void Update()
+    {
         float soundScale = SoudManager.instance.soundMul;
-        int index = (int)(soundScale / 0.2f);
-        Transform[] allChildren = GetComponentsInChildren<Transform>();
+        float index = soundScale / 0.2f;
         for (int i = 1; i <= 10; i++)
         {
             SpriteRenderer sprite = allChildren[i].gameObject.GetComponent<SpriteRenderer>();
-            if (i > index + 1)
+            if (i > Mathf.RoundToInt(index))
             {
                 sprite.color = new Color(1f, 1f, 1f, 100f / 255f);
             }

@@ -34,20 +34,6 @@ public class ButtonMenuManager : MonoBehaviour
 
         float distanceX = (float)(worldPosition.x - objectPosition.x);
         int index = (int)(Mathf.RoundToInt(distanceX / 0.2f));
-        GameObject soundPhoto = GameObject.Find("SoundPhoto");
-        Transform[] allChildren = soundPhoto.GetComponentsInChildren<Transform>();
-        for (int i = 1; i <= 10; i++)
-        {
-            SpriteRenderer sprite = allChildren[i].gameObject.GetComponent<SpriteRenderer>();
-            if (i > index + 1)
-            {
-                sprite.color = new Color(1f, 1f, 1f, 100f / 255f);
-            }
-            else
-            {
-                sprite.color = new Color(1f, 1f, 1f, 255f / 255f);
-            }
-        }
         index = Mathf.Min(index + 1, 10);
         float soundMul = (float)(index) / 5f;
         SoudManager.instance.SetBirdSound(soundMul);

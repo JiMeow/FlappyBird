@@ -72,6 +72,7 @@ public class BirdDead : MonoBehaviour
 
     private void Restart()
     {
+        SoudManager.instance.BirdBg.volume = SoudManager.instance.soundMul * 0.1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
