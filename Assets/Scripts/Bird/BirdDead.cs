@@ -25,6 +25,10 @@ public class BirdDead : MonoBehaviour
         {
             Restart();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
 
