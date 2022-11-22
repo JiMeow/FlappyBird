@@ -23,7 +23,12 @@ public class UpdateScore : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<TMP_Text>().text = "Score: " + nowScore;
+            int nowTextScore = int.Parse(nowText.text.ToString().Substring(7));
+            if (nowScore > nowTextScore)
+            {
+                SoudManager.instance.PlayBirdScore();
+                gameObject.GetComponent<TMP_Text>().text = "Score: " + nowScore;
+            }
         }
         if (nowScore > PlayerPrefs.GetInt("Score"))
         {

@@ -27,6 +27,7 @@ public class BirdControll : MonoBehaviour
             }
             //move up
             rb.velocity = new Vector2(0, force);
+            SoudManager.instance.PlayBirdFly();
         }
     }
 }

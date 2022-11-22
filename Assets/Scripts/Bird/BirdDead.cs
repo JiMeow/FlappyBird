@@ -46,6 +46,8 @@ public class BirdDead : MonoBehaviour
 
     private void Dead()
     {
+        SoudManager.instance.PlayBirdDead();
+        SoudManager.instance.LowerBirdBg();
         isDead = true;
         cameraMove.speed = 0f;
         bMove.speed = 0f;
