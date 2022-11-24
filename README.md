@@ -5,6 +5,8 @@ Assets Credits:
 - assets block, pipe, bird and background | [Dong Nguyen](https://megacrash.itch.io/flappy-bird-assets )
 <img src="Assets/TileSet/OldS2.png">
 
+- assets Win95DefHand | [VOiD1 Gaming](https://void1gaming.itch.io/free-basic-cursor-pack)
+<img src="Assets/Photo/Win95DefHand.png">
 
 
 Sound Credits:
