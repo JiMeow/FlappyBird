@@ -11,5 +11,3 @@ Sound Credits:
 - background Sound | [Jextor](https://www.youtube.com/watch?v=WxI_bK3huqI)
 
 - sound effect | [SkiT YT](https://www.youtube.com/watch?v=w1qyoha3Og8)
-
-***Sound setting bug on mobile fullscreen webGL
