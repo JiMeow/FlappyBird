@@ -21,10 +21,17 @@ public class BirdControll : MonoBehaviour
         //press any key down
         if (Input.anyKeyDown)
         {
+            //birdAlready Dead (bad code) may need TimeTravel.cs
             if (force == 0f)
             {
+                //bad code may need TimeTravel.cs
+                if (Time.timeScale < 8)
+                {
+                    Time.timeScale *= 2;
+                }
                 return;
             }
+
             //move up
             rb.velocity = new Vector2(0, force);
             SoudManager.instance.PlayBirdFly();

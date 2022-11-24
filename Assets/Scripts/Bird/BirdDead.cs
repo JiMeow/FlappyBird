@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class BirdDead : MonoBehaviour
 {
+    GameObject deadScreen;
     BirdMove bMove, cameraMove;
     BirdControll bControll;
     Rigidbody2D bRb;
@@ -13,17 +15,19 @@ public class BirdDead : MonoBehaviour
 
     private void Start()
     {
+        deadScreen = GameObject.Find("DeadScreen");
         cameraMove = GameObject.Find("Main Camera").GetComponent<BirdMove>(); ;
         bMove = gameObject.GetComponent<BirdMove>();
         bControll = gameObject.GetComponent<BirdControll>();
         bRb = gameObject.GetComponent<Rigidbody2D>();
+        deadScreen.SetActive(false);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Restart();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -67,12 +71,12 @@ public class BirdDead : MonoBehaviour
         bRb.gravityScale = 0f;
         bRb.velocity = new Vector2(0, 0.3f);
         gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-        Invoke("Restart", 8f);
+        Invoke("DeadScreen", 8f);
     }
 
-    private void Restart()
+    private void DeadScreen()
     {
+        deadScreen.SetActive(true);
         SoudManager.instance.BirdBg.volume = SoudManager.instance.soundMul * 0.1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

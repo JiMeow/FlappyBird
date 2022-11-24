@@ -26,6 +26,11 @@ public class ButtonMenuManager : MonoBehaviour
         SceneManager.LoadScene("Setting");
     }
 
+    public void LoadMainScene()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
     public void SettingSound()
     {
         Vector3 mousePosition = Input.mousePosition;
